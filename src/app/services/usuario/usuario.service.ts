@@ -95,18 +95,6 @@ export class UsuarioService {
     this.router.navigate(['/login']);
   }
 
-  loginGoogle( token: string ) {
-
-    let url = URL_SERVICIOS + '/login/google';
-
-    return this.http.post( url, { token } )
-                .map( (resp: any) => {
-                  this.guardarStorage( resp.id, resp.token, resp.usuario, resp.menu );
-                  return true;
-                });
-
-
-  }
 
   login( usuario: Usuario, recordar: boolean = false ) {
 
